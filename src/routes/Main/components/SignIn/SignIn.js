@@ -11,7 +11,7 @@ class SignIn extends Component {
     this.props.setSigninnModalVisibility(false)
   }
   verifyUser = () => {
-    // return this.props.router.push('main')
+    return this.props.router.push('home')
   }
 
   render () {
@@ -31,6 +31,7 @@ class SignIn extends Component {
 
 SignIn.propTypes = {
   isSigninModalOpen: PropTypes.bool.isRequired,
+  router: React.PropTypes.object,
   setSigninnModalVisibility: PropTypes.func.isRequired
 }
 
