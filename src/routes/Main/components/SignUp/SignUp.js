@@ -8,7 +8,7 @@ export const SignUp = ({ setSigninnModalVisibility, isSignUpModalOpen, setSignup
   const closeSignUpModal = () => {
     setSignupModalVisibility(false)
   }
-  // add html content here for sign in
+  // add html content here for sign up
   return (
       isSignUpModalOpen &&
       <div>

@@ -12,4 +12,4 @@ const mapStateToProps = (state) => ({
   isSigninModalOpen: state.login.isSigninModalOpen
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(withRouter(SignIn))
+export default connect(mapStateToProps, mapDispatchToProps)(SignIn)

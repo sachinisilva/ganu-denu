@@ -1,28 +1,35 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
-export const SignIn = ({ setSigninnModalVisibility, router, isSigninModalOpen }) => {
-  const closeSignInModal = () => {
-    setSigninnModalVisibility(false)
+
+class SignIn extends Component {
+  constructor (props) {
+    super(props)
+    this.closeSignInModal = this.closeSignInModal.bind(this)
+    this.verifyUser = this.verifyUser.bind(this)
   }
-  const verifyUser = () => {
-    return router.push('home')
+  closeSignInModal = () => {
+    this.props.setSigninnModalVisibility(false)
+  }
+  verifyUser = () => {
+    // return this.props.router.push('main')
   }
 
-  // add html content here for sign in
-  return (
-    isSigninModalOpen &&
-    <div>
-      <input type='text' id='username' />username
-      <input type='text' id='password' />password
-      <button type='submit' onClick={verifyUser}>login</button>
-      <button type='submit' onClick={closeSignInModal}>Close</button>
-    </div>
-  )
+  render () {
+    const { isSigninModalOpen } = this.props
+    // add html content here for sign in
+    return (
+      isSigninModalOpen &&
+      <div>
+        <input type='text' id='username' />username
+        <input type='text' id='password' />password
+        <button type='submit' onClick={this.verifyUser}>login</button>
+        <button type='submit' onClick={this.closeSignInModal}>Close</button>
+      </div>
+    )
+  }
 }
+
 SignIn.propTypes = {
-  router: React.PropTypes.shape({
-    push: PropTypes.func.isRequired
-  }).isRequired,
   isSigninModalOpen: PropTypes.bool.isRequired,
   setSigninnModalVisibility: PropTypes.func.isRequired
 }

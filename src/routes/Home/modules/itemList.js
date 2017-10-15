@@ -49,7 +49,7 @@ export const getItems = () => {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [SET_ITEMS]: (state, action) => {
-    var items = action.payload.map(item =>
+    let items = action.payload.map(item =>
       ({ selected: false,
         item: item }))
     return items

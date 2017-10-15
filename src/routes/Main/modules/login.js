@@ -31,10 +31,10 @@ export const setSignupModalVisibility = (isOpen) => {
 // ------------------------------------
 const ACTION_HANDLERS = {
   [SET_SIGNIN_MODAL_VISIBILITY]: (state, action) => {
-    return { ...state, login: Object.assign({}, ...state.login, { isSigninModalOpen: action.payload }) }
+    return { ...state, isSigninModalOpen: action.payload }
   },
   [SET_SIGNUP_MODAL_VISIBILITY]: (state, action) => {
-    return { ...state, login: Object.assign({}, ...state.login, { isSignUpModalOpen: action.payload }) }
+    return { ...state, isSignUpModalOpen: action.payload }
   }
 }
 

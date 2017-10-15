@@ -8,7 +8,7 @@ export default (store) => ({
     require.ensure([], (require) => {
       /*  Webpack - use require callback to define
           dependencies for bundling   */
-      const Main = require('./components/Main').default
+      const MainSection = require('./components/MainSection').default
       const userReducer = require('./modules/user').default
       const loginReducer = require('./modules/login').default
       const itemListReducer = require('../Home/modules/itemList').default
@@ -19,7 +19,7 @@ export default (store) => ({
       injectReducer(store, { key: 'itemList', reducer: itemListReducer })
 
       /*  Return getComponent   */
-      cb(null, Main)
+      cb(null, MainSection)
 
       /* Webpack named bundle   */
     }, 'main')

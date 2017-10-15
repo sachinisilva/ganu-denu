@@ -1,7 +1,7 @@
 import { connect } from 'react-redux'
 import { setSignupModalVisibility, setSigninnModalVisibility } from '../modules/login'
 
-import MainPage from '../components/Main'
+import MainPage from '../components/MainPage'
 
 const mapDispatchToProps = {
   setSignupModalVisibility,

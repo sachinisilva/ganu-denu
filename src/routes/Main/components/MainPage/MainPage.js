@@ -3,11 +3,13 @@ import PropTypes from 'prop-types'
 import ItemListContainer from '../../../Home/containers/ItemListContainer'
 export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }) => {
   const getSignInModal = () => {
-    return setSigninnModalVisibility(true)
+    setSignupModalVisibility(false)
+    setSigninnModalVisibility(true)
   }
 
   const getSignUpModal = () => {
-    return setSignupModalVisibility(true)
+    setSigninnModalVisibility(false)
+    setSignupModalVisibility(true)
   }
 
   // add html content here for sign in
