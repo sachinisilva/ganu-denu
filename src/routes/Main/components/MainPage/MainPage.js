@@ -1,6 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import ItemListContainer from '../../../Home/containers/ItemListContainer'
+import {FlatButton} from 'material-ui'
+
 export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }) => {
   const getSignInModal = () => {
     setSignupModalVisibility(false)
@@ -15,8 +17,14 @@ export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }
   // add html content here for sign in
   return (
     <div>
-      <a href='#' onClick={getSignInModal}>SignIn</a>
-      <a href='#' onClick={getSignUpModal}>SignUp</a>
+      <FlatButton
+      label="Sign In"
+      primary={true}
+      onClick={getSignInModal}/>
+      <FlatButton
+        label="Sign Up"
+        primary={true}
+        onClick={getSignUpModal}/>
       <ItemListContainer />
     </div>
   )
