@@ -17,14 +17,21 @@ export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }
   // add html content here for sign in
   return (
     <div>
+      <div className="gen-app-header layout__row layout__align-space-between-center">
+        <div className="gen-app-header-logo">
+          <h1>Ganu Denu</h1>
+        </div>
+        <div className="gen-app-header-nav">
       <FlatButton
       label="Sign In"
-      primary={true}
       onClick={getSignInModal}/>
       <FlatButton
         label="Sign Up"
         primary={true}
         onClick={getSignUpModal}/>
+      </div>
+      </div>
+
       <ItemListContainer />
     </div>
   )

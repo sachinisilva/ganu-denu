@@ -1,0 +1,19 @@
+.gen {
+  &-app-header {
+    position: fixed;
+    width: 100vw;
+    height: 50px;
+    background-color: #0288D1;
+    padding: 20px;
+    top: 0px;
+
+    &-logo {
+      color: white;
+      font-family: "beyond_the_mountains";
+
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+}

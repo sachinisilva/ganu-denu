@@ -26,9 +26,9 @@ class SignIn extends Component {
     return (
       isSigninModalOpen &&
       <Dialog
-        modal={true}
+        modal={false}
         open={isSigninModalOpen}
-        onRequestClose={this.handleClose}
+        onRequestClose={this.closeSignInModal}
         contentStyle={customContentStyle}
       >
         <div className="layout__column layout__align-start-center gen-sign-in-container">

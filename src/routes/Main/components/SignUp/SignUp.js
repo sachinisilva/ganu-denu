@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
+import {FlatButton, Dialog, RaisedButton, TextField} from 'material-ui'
+
 export const SignUp = ({ setSigninnModalVisibility, isSignUpModalOpen, setSignupModalVisibility }) => {
   const signUpUser = () => {
     setSignupModalVisibility(false)
@@ -8,16 +10,43 @@ export const SignUp = ({ setSigninnModalVisibility, isSignUpModalOpen, setSignup
   const closeSignUpModal = () => {
     setSignupModalVisibility(false)
   }
+  const customContentStyle = {
+    width: '400px',
+    padding: '0px'
+  }
   // add html content here for sign up
   return (
-      isSignUpModalOpen &&
-      <div>
-        <input type='text' id='email' />username(email)
-        <input type='text' id='password' />password
-        <input type='text' id='password' /> confirm password
-        <button type='submit' onClick={signUpUser}>SignUp</button>
-        <button type='submit' onClick={closeSignUpModal}>Close</button>
+    <Dialog
+      modal={false}
+      open={isSignUpModalOpen}
+      onRequestClose={closeSignUpModal}
+      contentStyle={customContentStyle}
+    >
+      <div className="layout__column layout__align-start-center gen-sign-in-container">
+        <div className="layout__column layout__align-start-center">
+          <h3>Welcome</h3>
+          <p>the best move<br/>you have ever made in your life!</p>
+          <TextField
+            hintText="Username"
+            floatingLabelText="Username"
+          />
+          <TextField
+            hintText="Password"
+            floatingLabelText="Password"
+          />
+          <TextField
+            hintText="confirm Password"
+            floatingLabelText="Confirm password"
+          />
+          <RaisedButton type='submit' onClick={signUpUser} primary={true}
+                        className="gen-sign-in-btn">Sign up</RaisedButton>
+        </div>
+        <div className="layout__row layout__align-space-between-center gen-sign-in-base">
+          <p>Already have an account?</p>
+          <FlatButton label="Sign in"/>
+        </div>
       </div>
+    </Dialog>
   )
 }
 SignUp.propTypes = {
