@@ -2,8 +2,9 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import ItemListContainer from '../../../Home/containers/ItemListContainer'
 import {FlatButton} from 'material-ui'
+import banner from '../../../../../public/banner.jpg'
 
-export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }) => {
+export const MainPage = ({setSigninnModalVisibility, setSignupModalVisibility}) => {
   const getSignInModal = () => {
     setSignupModalVisibility(false)
     setSigninnModalVisibility(true)
@@ -22,17 +23,25 @@ export const MainPage = ({ setSigninnModalVisibility, setSignupModalVisibility }
           <h1>Ganu Denu</h1>
         </div>
         <div className="gen-app-header-nav">
-      <FlatButton
-      label="Sign In"
-      onClick={getSignInModal}/>
-      <FlatButton
-        label="Sign Up"
-        primary={true}
-        onClick={getSignUpModal}/>
+          <FlatButton
+            label="Sign In"
+            onClick={getSignInModal}/>
+          <FlatButton
+            label="Sign Up"
+            primary={true}
+            onClick={getSignUpModal}/>
+        </div>
       </div>
+      <div className="gen-banner">
+        <img src={banner}/>
+        <div className="overlay layout__column layout__align-center-center">
+          <div className="layout__column layout__align-center-end">
+            <h1>Ganu Denu</h1>
+            <p>Launching soon...</p>
+          </div>
+        </div>
       </div>
-
-      <ItemListContainer />
+      {/*<ItemListContainer />*/}
     </div>
   )
 }
